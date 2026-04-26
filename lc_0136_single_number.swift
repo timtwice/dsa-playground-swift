@@ -16,3 +16,19 @@ class Solution {
         return result
     }
 }
+
+class Solution {
+    func singleNumber(_ nums: [Int]) -> Int {
+        var lookup = Set<Int>()
+
+        for num in nums {
+            if lookup.contains(num) {
+                lookup.remove(num)
+            } else {
+                lookup.insert(num)
+            }
+        }
+
+        return lookup.first!
+    }
+}
